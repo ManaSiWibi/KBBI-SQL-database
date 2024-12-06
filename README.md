@@ -75,6 +75,18 @@ CREATE TABLE `dictionary` (
 ) ENGINE=InnoDB AUTO_INCREMENT=115989 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 ```
 
+## Tipe Format Data
+Ada 2 tipe format data, yaitu `1` & `2`, kurang lebih perbedaannya seperti ini:
+| _id | word | arti | type |
+|---|---|---|---|
+| 1 | A | `<b><sup>1</sup>A, a</b> <i>n</i> <b>1</b> huruf pertama abjad Indonesia; <b>2</b> nama huruf <i>a</i>; <b>3</b> penanda pertama dl urutan (mutu, nilai, dsb)` | `1` |
+| 2 | A | Nomina (kata benda)\n(1) huruf pertama abjad Indonesia;\n(2) nama huruf a;\n(3) penanda pertama dalam urutan (mutu, nilai, dan sebagainya) | `2` |
+
+Dapat Anda lihat perbedaannya:
+- Tipe `1` menggunakan format HTML
+- Tipe `2` tidak menggunakan format HTML
+
+
 ## API KBBI
 Jika data pada database kurang lengkap, Anda dapat mengkombinasikannya dengan [API KBBI PHP Codeigniter4](https://github.com/dyazincahya/API-KBBI-PHP-Codeigniter-4) yang sumber datanya langsung berasal dari [KBBI Daring Kemdikbud](https://kbbi.kemdikbud.go.id/)
 
