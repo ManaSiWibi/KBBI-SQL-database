@@ -91,7 +91,7 @@ Dapat Anda lihat perbedaannya:
 Jika data pada database kurang lengkap, Anda dapat mengkombinasikannya dengan [API KBBI PHP Codeigniter4](https://github.com/dyazincahya/API-KBBI-PHP-Codeigniter-4) yang sumber datanya langsung berasal dari [KBBI Daring Kemdikbud](https://kbbi.kemdikbud.go.id/)
 
 ## Contoh Aplikasi KBBI
-MyKBBI: Kamus Bahasa Indonesia : [https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi](https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi)
+MyKBBI: [https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi](https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi)
 
 ## Kredit
 [Ican Bachors](https://github.com/bachors/KBBI.sql)
