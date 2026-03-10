@@ -1,3 +1,6 @@
+<img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/049f6ac3-da3f-4c01-bc5d-99daa197fc85" />
+
+
 # KBBI SQL Database
 Kamus Besar Bahasa Indonesia (KBBI) SQL Database, total data ```115.978``` kata.
 
@@ -94,7 +97,8 @@ Jika data pada database kurang lengkap, Anda dapat mengkombinasikannya dengan [A
 MyKBBI: [https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi](https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi)
 
 ## Kredit
-[Ican Bachors](https://github.com/bachors/KBBI.sql)
+- [Ican Bachors](https://github.com/bachors/KBBI.sql)
+- [Flaticon](https://www.flaticon.com/free-icon/dictionary_7214200?related_id=7214200)
 
 ## Penulis
 [Kang Cahya](https://kang-cahya.com)
