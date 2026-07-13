@@ -2,7 +2,7 @@
 
 # KBBI SQL Database
 
-Kamus Besar Bahasa Indonesia (KBBI) SQL Database, total data `115.978` kata.
+Kamus Besar Bahasa Indonesia (KBBI) SQL Database, total data `115.978` kata, kemudian 2847 data kata baku dan non baku.
 
 ## Kamus
 
