@@ -2,7 +2,7 @@
 
 # KBBI SQL Database
 
-Kamus Besar Bahasa Indonesia (KBBI) SQL Database, total data `115.978` kata, `2.847` data kata baku-nonbaku, dan `4.625` data sinonim.
+Kamus Besar Bahasa Indonesia (KBBI) SQL Database, total data `115.978` kata, `2.847` data kata baku-nonbaku, `4.625` data sinonim, dan `550` data antonim.
 
 ## Kamus
 
@@ -46,6 +46,14 @@ Detail informasi dan format data dapat dilihat di: [README Baku Non-Baku](baku-n
 Data ini berisi informasi tentang padanan kata (sinonim) dalam Bahasa Indonesia. Terdapat kurang lebih `4.625` data sinonim.
 
 Detail informasi dan format data dapat dilihat di: [README Sinonim](sinonim/README.md)
+
+---
+
+## Antonim
+
+Data ini berisi informasi tentang lawan kata (antonim) dalam Bahasa Indonesia. Terdapat kurang lebih `550` data antonim.
+
+Detail informasi dan format data dapat dilihat di: [README Antonim](antonim/README.md)
 
 ---
 
