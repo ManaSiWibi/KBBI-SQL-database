@@ -1,75 +1,97 @@
-<img width="256" height="256" alt="image" src="https://github.com/user-attachments/assets/049f6ac3-da3f-4c01-bc5d-99daa197fc85" />
+<p align="center">
+  <img width="180" height="180" alt="Logo KBBI SQL Database" src="https://github.com/user-attachments/assets/049f6ac3-da3f-4c01-bc5d-99daa197fc85" />
+</p>
 
-# KBBI SQL Database
+<h1 align="center">KBBI SQL Database</h1>
 
-Kamus Besar Bahasa Indonesia (KBBI) SQL Database, total data `115.978` kata, `2.847` data kata baku-nonbaku, `4.625` data sinonim, dan `550` data antonim.
+<p align="center">
+  Basadata (Database) Kamus Besar Bahasa Indonesia (KBBI) yang menyediakan ribuan entri kata lengkap dengan data pendukung seperti sinonim, antonim, dan kata baku/nonbaku untuk kebutuhan pengembangan aplikasi.
+</p>
 
-## Kamus
-
-Informasi lengkap mengenai database Kamus Besar Bahasa Indonesia.
-
-### Format data
-
-Tersedia untuk format data:
-
-- [MySQL](https://github.com/dyazincahya/KBBI-SQL-database/blob/main/dictionary__MySQL.sql)
-- [SQLite](https://github.com/dyazincahya/KBBI-SQL-database/blob/main/dictionary__SQLite.sql)
-- [PostgreSQL](https://github.com/dyazincahya/KBBI-SQL-database/blob/main/dictionary__PostgreSQL.sql)
-
-Juga tersedia untuk format data lainnya seperti CSV, JSON, Markdown, PHP Array, XML, DbUnit, dan HTML.
-
-### Struktur Tabel
-
-Secara umum, tabel `dictionary` memiliki struktur sebagai berikut:
-
-| Nama Field | Tipe Data | Keterangan                                  |
-| ---------- | --------- | ------------------------------------------- |
-| \_id       | INTEGER   | Primary Key, Auto Increment                 |
-| word       | TEXT      | Kata                                        |
-| arti       | TEXT      | Arti atau penjelasan                        |
-| type       | INTEGER   | Tipe atau kategori (1: HTML, 2: Plain Text) |
-
-Detail mengenai pembuatan tabel untuk masing-masing database dapat dilihat pada file SQL terkait.
+<p align="center">
+  <a href="#ikhtisar-direktori-data">Ikhtisar Data</a> •
+  <a href="#integrasi-api">Integrasi API</a> •
+  <a href="#contoh-aplikasi">Contoh Aplikasi</a> •
+  <a href="#kredit-dan-lisensi">Kredit</a>
+</p>
 
 ---
 
-## Baku Non-Baku
+## Ringkasan Data
 
-Data ini berisi informasi tentang pasangan kata baku dan kata non-baku. Terdapat kurang lebih `2847` pasangan kata.
+Repositori ini menyimpan total data bahasa Indonesia dengan rincian sebagai berikut:
 
-Detail informasi dan format data dapat dilihat di: [README Baku Non-Baku](baku-nonbaku/README.md)
-
----
-
-## Sinonim
-
-Data ini berisi informasi tentang padanan kata (sinonim) dalam Bahasa Indonesia. Terdapat kurang lebih `4.625` data sinonim.
-
-Detail informasi dan format data dapat dilihat di: [README Sinonim](sinonim/README.md)
+- **Kamus Utama (Edisi IV):** `115.978` kata
+- **Kata Baku & Nonbaku:** `2.847` pasangan kata
+- **Sinonim (Padanan Kata):** `4.625` entri data
+- **Antonim (Lawan Kata):** `550` entri data
 
 ---
 
-## Antonim
+## Ikhtisar Direktori Data
 
-Data ini berisi informasi tentang lawan kata (antonim) dalam Bahasa Indonesia. Terdapat kurang lebih `550` data antonim.
+Seluruh data dikelompokkan ke dalam direktori terstruktur berdasarkan fungsinya masing-masing:
 
-Detail informasi dan format data dapat dilihat di: [README Antonim](antonim/README.md)
+### [1. KBBI Edisi IV (Kamus)](edisi-IV/README.md)
+
+Berisi pangkalan data utama Kamus Besar Bahasa Indonesia Edisi IV. Menyediakan kosakata beserta artinya dalam berbagai format data siap pakai (SQL, CSV, JSON, HTML, XML, PHP Array, dan DbUnit).
+
+### [2. Baku & Nonbaku](baku-nonbaku/README.md)
+
+Menyediakan daftar perbandingan kata baku dan tidak baku untuk validasi ejaan berdasarkan standar KBBI.
+
+### [3. Sinonim (Padanan Kata)](sinonim/README.md)
+
+Berisi kumpulan relasi sinonim antarkata dalam bahasa Indonesia.
+
+### [4. Antonim (Lawan Kata)](antonim/README.md)
+
+Berisi hubungan oposisi makna atau lawan kata dalam bahasa Indonesia.
+
+### [5. Data Mentah (Raw Data)](data-raw/)
+
+Menyimpan berkas SQL mentah hasil partisi database utama untuk memudahkan proses impor data berkapasitas besar.
 
 ---
 
-## API KBBI
+## Integrasi API
 
-Jika data pada database kurang lengkap, Anda dapat mengkombinasikannya dengan [API KBBI PHP Codeigniter4](https://github.com/dyazincahya/API-KBBI-PHP-Codeigniter-4) yang sumber datanya langsung berasal dari [KBBI Daring Kemdikbud](https://kbbi.kemdikbud.go.id/)
+Apabila data lokal yang tersedia di repositori ini kurang lengkap, Anda dapat mengintegrasikannya dengan layanan eksternal berikut:
 
-## Contoh Aplikasi KBBI
+- **[API KBBI PHP CodeIgniter 4](https://github.com/dyazincahya/API-KBBI-PHP-CodeIgniter-4)** — Mengambil data dinamis yang bersumber langsung dari portal resmi [KBBI Daring Kemdikbud](https://kbbi.kemdikbud.go.id/).
 
-MyKBBI: [https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi](https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi)
+---
+
+## Contoh Aplikasi
+
+Penerapan basis data ini dapat dilihat langsung pada aplikasi Android berikut:
+
+- **MyKBBI:** [Unduh di Google Play Store](https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi)
+
+---
+
+## Sumber Data
+
+Repositori ini merupakan kurasi dari berbagai sumber data bahasa Indonesia yang tersedia di internet, khususnya GitHub:
+
+1. **[Ican Bachors (KBBI.sql)](https://github.com/bachors/KBBI.sql)** — Penyedia data repositori dasar.
+2. **[aryakdaniswara (kbbi-v6-full-csv)](https://github.com/aryakdaniswara/kbbi-v6-full-csv)** — Penyedia data repositori dasar.
+3. **[aryakdaniswara (kbbi-dataset-kbbi-v)](https://github.com/aryakdaniswara/kbbi-dataset-kbbi-v)** — Penyedia data repositori dasar.
+4. **[raf555 (KBBI-api)](https://github.com/raf555/kbbi-api)** — Penyedia data repositori dasar.
+5. **Baku & Nonbaku** — Dibuat menggunakan model kecerdasan buatan GPT-5.6 Sol.
+6. **Sinonim** — Dibuat menggunakan model kecerdasan buatan GPT-5.6 Sol.
+7. **Antonim** — Dibuat menggunakan model kecerdasan buatan GPT-5.6 Sol.
+
+---
 
 ## Kredit
 
-- [Ican Bachors](https://github.com/bachors/KBBI.sql)
-- [Flaticon](https://www.flaticon.com/free-icon/dictionary_7214200?related_id=7214200)
+Apresiasi dan terima kasih ditujukan kepada:
 
-## Penulis
+- **[Flaticon](https://www.flaticon.com/free-icon/dictionary_7214200?related_id=7214200)** — Penyedia ikon kamus.
 
-[Kang Cahya](https://kang-cahya.com)
+---
+
+<p align="center">
+  Dikelola oleh <strong><a href="https://kang-cahya.com">Kang Cahya</a></strong>
+</p>
