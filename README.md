@@ -94,6 +94,16 @@ Apresiasi dan terima kasih ditujukan kepada:
 
 ---
 
+> [!WARNING]
+>
+> ### Hak Cipta dan Kepemilikan Data (Copyright and Data Ownership)
+>
+> Seluruh data di dalam kamus ini dimiliki sepenuhnya oleh **Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia**.
+>
+> Penggunaan dataset ini untuk kebutuhan komersial sangat dilarang dan tunduk pada ketentuan hukum pidana berdasarkan **Undang-Undang Republik Indonesia Nomor 28 Tahun 2014 tentang Hak Cipta**.
+
+---
+
 <p align="center">
   Dikelola oleh <strong><a href="https://kang-cahya.com">Kang Cahya</a></strong>
 </p>
