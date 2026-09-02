@@ -10,3 +10,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+### Svelte UI
+ui/node_modules/
+ui/dist/
+ui/public/data/

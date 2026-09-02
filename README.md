@@ -9,6 +9,7 @@
 </p>
 
 <p align="center">
+  <a href="#data-explorer">Data Explorer</a> •
   <a href="#ikhtisar-direktori-data">Ikhtisar Data</a> •
   <a href="#integrasi-api">Integrasi API</a> •
   <a href="#contoh-aplikasi">Contoh Aplikasi</a> •
@@ -16,6 +17,24 @@
 </p>
 
 ---
+
+## Data Explorer
+
+Antarmuka berbasis Svelte tersedia di direktori [`ui`](ui/) untuk menjelajahi
+kamus utama, kata baku dan nonbaku, sinonim, serta antonim secara interaktif.
+Data kamus yang besar diproses menjadi indeks pencarian dan shard per huruf
+agar tidak membebani pemuatan awal.
+
+```bash
+cd ui
+npm install
+npm run dev
+```
+
+Gunakan `npm run build` untuk menyiapkan data dan membuat build produksi.
+Workflow `.github/workflows/deploy-pages.yml` akan menerbitkan UI ke GitHub
+Pages setiap kali branch `main` diperbarui. Aktifkan **Pages → Source → GitHub
+Actions** pada pengaturan repositori.
 
 ## Ringkasan Data
 

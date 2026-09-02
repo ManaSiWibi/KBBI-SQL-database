@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dyazincahya.github.io/KBBI-SQL-database/sitemap.xml
