@@ -39,6 +39,23 @@
     <div><Icon name="file" size={20} /><p><span>JSON</span><small>Format UI explorer</small></p></div>
   </div>
 
+  <section class="api-integration" aria-labelledby="api-integration-title">
+    <div class="api-brand" aria-hidden="true">
+      <span><Icon name="php" size={44} /></span>
+      <i>+</i>
+      <span><Icon name="codeigniter" size={38} /></span>
+    </div>
+    <div class="api-copy">
+      <p class="eyebrow"><span></span>Integrasi API</p>
+      <h2 id="api-integration-title">API KBBI PHP CodeIgniter 4</h2>
+      <p>Jika data lokal belum mencukupi, gunakan layanan ini untuk mengambil data dinamis yang bersumber langsung dari portal resmi KBBI Daring Kemdikbud.</p>
+      <div class="api-links">
+        <a class="primary-button" href="https://github.com/dyazincahya/API-KBBI-PHP-CodeIgniter-4" target="_blank" rel="noreferrer"><Icon name="github" size={16} />Lihat repository <Icon name="external" size={10} /></a>
+        <a href="https://kbbi.kemdikbud.go.id/" target="_blank" rel="noreferrer">KBBI Daring Kemdikbud <Icon name="external" size={10} /></a>
+      </div>
+    </div>
+  </section>
+
   <section class="developer-section" aria-labelledby="dataset-table-title">
     <header class="developer-heading">
       <div><p class="eyebrow"><span></span>Inventaris data</p><h2 id="dataset-table-title">Koleksi dan format file</h2></div>

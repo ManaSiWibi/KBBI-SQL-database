@@ -1,6 +1,6 @@
 <script>
   import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome'
-  import { faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons'
+  import { faGithub, faGooglePlay, faPhp } from '@fortawesome/free-brands-svg-icons'
   import {
     faArrowRight,
     faBookOpen,
@@ -9,6 +9,7 @@
     faCode,
     faDatabase,
     faFileCode,
+    faFireFlameCurved,
     faHouse,
     faArrowUpRightFromSquare,
     faXmark,
@@ -32,6 +33,8 @@
     arrow: faArrowRight,
     github: faGithub,
     play: faGooglePlay,
+    php: faPhp,
+    codeigniter: faFireFlameCurved,
     database: faDatabase,
     table: faTable,
     code: faCode,
