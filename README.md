@@ -76,7 +76,7 @@ Menyimpan berkas SQL mentah hasil partisi database utama untuk memudahkan proses
 
 Apabila data lokal yang tersedia di repositori ini kurang lengkap, Anda dapat mengintegrasikannya dengan layanan eksternal berikut:
 
-- **[API KBBI PHP CodeIgniter 4](https://github.com/dyazincahya/API-KBBI-PHP-CodeIgniter-4)** — Mengambil data dinamis yang bersumber langsung dari portal resmi [KBBI Daring Kemdikbud](https://kbbi.kemdikbud.go.id/).
+- **[API KBBI PHP CodeIgniter 4](https://github.com/dyazincahya/API-KBBI-PHP-CodeIgniter-4)** — Mengambil data dinamis yang bersumber langsung dari portal resmi [KBBI Daring Kemendikdasmen](https://kbbi.kemendikdasmen.go.id/).
 
 ---
 
@@ -108,7 +108,7 @@ Repositori ini merupakan kurasi dari berbagai sumber data bahasa Indonesia yang 
 >
 > ### Hak Cipta dan Kepemilikan Data (Copyright and Data Ownership)
 >
-> Seluruh data di dalam kamus ini dimiliki sepenuhnya oleh **Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia**.
+> Seluruh data di dalam kamus ini dimiliki sepenuhnya oleh **Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan Dasar dan Menengah Republik Indonesia**.
 >
 > Penggunaan dataset ini untuk kebutuhan komersial sangat dilarang dan tunduk pada ketentuan hukum pidana berdasarkan **Undang-Undang Republik Indonesia Nomor 28 Tahun 2014 tentang Hak Cipta**.
 

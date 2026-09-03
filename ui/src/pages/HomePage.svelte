@@ -98,7 +98,7 @@
     <h2 id="data-ownership-title">Sumber terbuka, hak data tetap dihormati.</h2>
   </div>
   <div class="notice-content">
-    <p>Seluruh data kamus dimiliki oleh <strong>Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia</strong>.</p>
+    <p>Seluruh data kamus dimiliki oleh <strong>Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan Dasar dan Menengah Republik Indonesia</strong>.</p>
     <p>Penggunaan komersial dilarang dan tunduk pada Undang-Undang Republik Indonesia Nomor 28 Tahun 2014 tentang Hak Cipta.</p>
   </div>
 </section>

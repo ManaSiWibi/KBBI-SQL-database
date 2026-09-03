@@ -48,10 +48,10 @@
     <div class="api-copy">
       <p class="eyebrow"><span></span>Integrasi API</p>
       <h2 id="api-integration-title">API KBBI PHP CodeIgniter 4</h2>
-      <p>Jika data lokal belum mencukupi, gunakan layanan ini untuk mengambil data dinamis yang bersumber langsung dari portal resmi KBBI Daring Kemdikbud.</p>
+      <p>Jika data lokal belum mencukupi, gunakan layanan ini untuk mengambil data dinamis yang bersumber langsung dari portal resmi KBBI Daring Kemendikdasmen.</p>
       <div class="api-links">
         <a class="primary-button" href="https://github.com/dyazincahya/API-KBBI-PHP-CodeIgniter-4" target="_blank" rel="noreferrer"><Icon name="github" size={16} />Lihat repository <Icon name="external" size={10} /></a>
-        <a href="https://kbbi.kemdikbud.go.id/" target="_blank" rel="noreferrer">KBBI Daring Kemdikbud <Icon name="external" size={10} /></a>
+        <a href="https://kbbi.kemendikdasmen.go.id/" target="_blank" rel="noreferrer">KBBI Daring Kemendikdasmen <Icon name="external" size={10} /></a>
       </div>
     </div>
   </section>
