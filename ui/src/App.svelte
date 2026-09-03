@@ -3,7 +3,7 @@
   import Icon from './lib/Icon.svelte'
   import HomePage from './pages/HomePage.svelte'
   import SearchPage from './pages/SearchPage.svelte'
-  import AboutPage from './pages/AboutPage.svelte'
+  import DeveloperPage from './pages/DeveloperPage.svelte'
 
   const searchTypes = ['all', 'dictionary', 'baku', 'sinonim', 'antonim']
   const legacyTypes = { dictionary: 'dictionary', 'baku-nonbaku': 'baku', sinonim: 'sinonim', antonim: 'antonim' }
@@ -21,15 +21,15 @@
     const path = location.hash.replace(/^#\/?/, '').split('?')[0] || 'home'
     const params = new URLSearchParams(location.hash.split('?')[1] ?? '')
     if (path === 'home') route = 'home'
-    else if (path === 'about') route = 'about'
+    else if (path === 'developer' || path === 'about') route = 'developer'
     else route = 'search'
     activeType = legacyTypes[path] ?? params.get('type') ?? 'all'
     if (!searchTypes.includes(activeType)) activeType = 'all'
 
     const metadata = route === 'home'
       ? ['KBBI Data Explorer', 'Jelajahi dataset Bahasa Indonesia sumber terbuka dan akses pencarian global untuk kamus, kata baku, sinonim, serta antonim.']
-      : route === 'about'
-        ? ['Tentang Dataset | KBBI Explorer', 'Informasi sumber, format, dan penggunaan dataset KBBI SQL Database.']
+      : route === 'developer'
+        ? ['Developer Data | KBBI Explorer', 'Dokumentasi koleksi, format file, dan struktur JSON KBBI SQL Database untuk developer.']
         : ['Pencarian Global | KBBI Data Explorer', descriptions[activeType]]
     document.title = metadata[0]
     document.querySelector('meta[name="description"]')?.setAttribute('content', metadata[1])
@@ -37,7 +37,7 @@
   }
 
   function navigate(destination) {
-    if (destination === 'home' || destination === 'about' || destination === 'search') {
+    if (destination === 'home' || destination === 'developer' || destination === 'search') {
       location.hash = `/${destination}`
       return
     }
@@ -57,25 +57,25 @@
 </script>
 
 <header class="site-header">
-  <a class="brand" href="#/home" aria-label="KBBI Data Explorer beranda"><span>K</span><div><strong>KBBI</strong><small>Data Explorer</small></div></a>
+  <a class="brand" href="#/home" aria-label="KBBI Data Explorer beranda"><img src={`${import.meta.env.BASE_URL}kbbi-logo.png`} alt="" /><div><strong>KBBI</strong><small>Data Explorer</small></div></a>
   <nav class="desktop-nav" aria-label="Navigasi utama">
-    <a class:active={route === 'home'} href="#/home">Beranda</a>
-    <a class:active={route === 'search'} href="#/search">Pencarian</a>
-    <a class:active={route === 'about'} href="#/about">Tentang</a>
+    <a class:active={route === 'home'} href="#/home"><Icon name="home" size={13} />Beranda</a>
+    <a class:active={route === 'search'} href="#/search"><Icon name="search" size={13} />Pencarian</a>
+    <a class:active={route === 'developer'} href="#/developer"><Icon name="code" size={14} />Developer</a>
   </nav>
   <a class="github-button" href="https://github.com/dyazincahya/KBBI-SQL-database" target="_blank" rel="noreferrer" aria-label="Buka repositori GitHub"><Icon name="github" /></a>
 </header>
 
 <main>
   {#if route === 'home'}<HomePage {navigate} />
-  {:else if route === 'about'}<AboutPage />
+  {:else if route === 'developer'}<DeveloperPage />
   {:else}<SearchPage initialType={activeType} {setType} />{/if}
 </main>
 
-<footer class="site-footer"><div class="brand footer-brand"><span>K</span><div><strong>KBBI</strong><small>Data Explorer</small></div></div><p>Dataset Bahasa Indonesia sumber terbuka. Bukan layanan resmi KBBI.</p><a href="https://github.com/dyazincahya/KBBI-SQL-database" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
+<footer class="site-footer"><div class="brand footer-brand"><img src={`${import.meta.env.BASE_URL}kbbi-logo.png`} alt="Logo KBBI Data Explorer" /><div><strong>KBBI</strong><small>Data Explorer</small></div></div><p>Dataset Bahasa Indonesia sumber terbuka. Bukan layanan resmi KBBI.</p><a href="https://github.com/dyazincahya/KBBI-SQL-database" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
 
 <nav class="mobile-nav main-mobile-nav" aria-label="Navigasi seluler">
   <a class:active={route === 'home'} href="#/home"><Icon name="home" size={19} /><span>Beranda</span></a>
   <a class:active={route === 'search'} href="#/search"><Icon name="search" size={19} /><span>Pencarian</span></a>
-  <a class:active={route === 'about'} href="#/about"><Icon name="info" size={19} /><span>Tentang</span></a>
+  <a class:active={route === 'developer'} href="#/developer"><Icon name="info" size={19} /><span>Developer</span></a>
 </nav>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="180" height="180" alt="Logo KBBI SQL Database" src="https://github.com/user-attachments/assets/049f6ac3-da3f-4c01-bc5d-99daa197fc85" />
+  <img width="220" height="220" alt="Logo KBBI SQL Database" src="ui/public/kbbi-logo.png" />
 </p>
 
 <h1 align="center">KBBI SQL Database</h1>
@@ -12,8 +12,7 @@
   <a href="#data-explorer">Data Explorer</a> •
   <a href="#ikhtisar-direktori-data">Ikhtisar Data</a> •
   <a href="#integrasi-api">Integrasi API</a> •
-  <a href="#contoh-aplikasi">Contoh Aplikasi</a> •
-  <a href="#kredit-dan-lisensi">Kredit</a>
+  <a href="#contoh-aplikasi">Contoh Aplikasi</a>
 </p>
 
 ---
@@ -102,14 +101,6 @@ Repositori ini merupakan kurasi dari berbagai sumber data bahasa Indonesia yang 
 7. **Baku & Nonbaku** — Dibuat menggunakan model kecerdasan buatan GPT-5.6 Sol.
 8. **Sinonim** — Dibuat menggunakan model kecerdasan buatan GPT-5.6 Sol.
 9. **Antonim** — Dibuat menggunakan model kecerdasan buatan GPT-5.6 Sol.
-
----
-
-## Kredit
-
-Apresiasi dan terima kasih ditujukan kepada:
-
-- **[Flaticon](https://www.flaticon.com/free-icon/dictionary_7214200?related_id=7214200)** — Penyedia ikon kamus.
 
 ---
 

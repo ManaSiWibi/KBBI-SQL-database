@@ -6,11 +6,11 @@
 
   let { initialType = 'all', setType } = $props()
   const types = [
-    { id: 'all', label: 'Semua' },
-    { id: 'dictionary', label: 'Kamus' },
-    { id: 'baku', label: 'Baku & Nonbaku' },
-    { id: 'sinonim', label: 'Sinonim' },
-    { id: 'antonim', label: 'Antonim' },
+    { id: 'all', label: 'Semua', icon: 'layers' },
+    { id: 'dictionary', label: 'Kamus', icon: 'book' },
+    { id: 'baku', label: 'Baku & Nonbaku', icon: 'check' },
+    { id: 'sinonim', label: 'Sinonim', icon: 'link' },
+    { id: 'antonim', label: 'Antonim', icon: 'swap' },
   ]
   let queryInput = $state('')
   let query = $state('')
@@ -127,7 +127,7 @@
     {#if queryInput}<button type="button" aria-label="Hapus pencarian" onclick={() => queryInput = ''}>×</button>{/if}
   </label>
   <div class="engine-filters" aria-label="Filter tipe data">
-    {#each types as type}<button class:active={activeType === type.id} onclick={() => chooseType(type.id)}>{type.label}</button>{/each}
+    {#each types as type}<button class:active={activeType === type.id} onclick={() => chooseType(type.id)}><Icon name={type.icon} size={11} />{type.label}</button>{/each}
   </div>
 </section>
 
@@ -164,7 +164,7 @@
   <div class="modal-backdrop" role="presentation" onclick={closeFromBackdrop}>
     <div class="word-modal" role="dialog" aria-modal="true" aria-labelledby="search-detail-title">
       <div class="word-modal-scroll">
-        <header><div><p class="eyebrow"><span></span>{typeLabel(selected.type)}</p><h2 id="search-detail-title">{selected.title}</h2></div><button class="modal-close" aria-label="Tutup detail" onclick={closeModal}>×</button></header>
+        <header><div><p class="eyebrow"><span></span>{typeLabel(selected.type)}</p><h2 id="search-detail-title">{selected.title}</h2></div><button class="modal-close" aria-label="Tutup detail" onclick={closeModal}><Icon name="close" size={16} /></button></header>
         {#if selected.type === 'dictionary'}
           <div class="modal-section dictionary-detail">{#each selected.records as record, index}<article><span>{index + 1}</span><p>{definitionToText(record.arti)}</p></article>{/each}</div>
         {:else if selected.type === 'baku'}

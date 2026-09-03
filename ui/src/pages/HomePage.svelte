@@ -66,20 +66,39 @@
   </div>
   <div class="source-list">
     {#each sources as source, index}
-      <a href={source.url} target="_blank" rel="noreferrer"><span>{String(index + 1).padStart(2, '0')}</span><strong>{source.name}</strong><b>↗</b></a>
+      <a href={source.url} target="_blank" rel="noreferrer"><span>{String(index + 1).padStart(2, '0')}</span><strong>{source.name}</strong><Icon name="external" size={11} /></a>
     {/each}
     <div class="ai-source"><span>AI</span><p><strong>Data hasil pengayaan AI</strong><small>Baku & Nonbaku, Sinonim, serta Antonim dibuat menggunakan GPT-5.6 Sol.</small></p></div>
   </div>
 </section>
 
+<section class="section-wrap app-showcase" aria-labelledby="app-showcase-title">
+  <div class="app-visual" aria-hidden="true">
+    <div class="phone-frame">
+      <img src={`${import.meta.env.BASE_URL}kbbi-logo.png`} alt="" />
+      <span>MyKBBI</span>
+      <small>Mari Jelajahi Bahasa</small>
+    </div>
+  </div>
+  <div class="app-copy">
+    <p class="eyebrow"><span></span>Contoh aplikasi</p>
+    <h2 id="app-showcase-title">MyKBBI — Mari Jelajahi Bahasa</h2>
+    <p>MyKBBI adalah aplikasi edukasi dan referensi bahasa Indonesia modern berbasis mobile Android. Aplikasi ini dirancang untuk membantu Anda menjelajahi kekayaan kosakata bahasa Indonesia dengan antarmuka yang bersih, cepat, dan interaktif.</p>
+    <a class="play-store-button" href="https://play.google.com/store/apps/details?id=com.kang.cahya.apps.mykbbi" target="_blank" rel="noreferrer">
+      <Icon name="play" size={24} />
+      <span><small>Unduh di</small><strong>Google Play</strong></span>
+      <Icon name="external" size={11} />
+    </a>
+  </div>
+</section>
+
 <section class="section-wrap data-notice" aria-labelledby="data-ownership-title">
   <div class="notice-heading">
-    <p class="eyebrow"><span></span>Kredit & penggunaan data</p>
+    <p class="eyebrow"><span></span>Penggunaan data</p>
     <h2 id="data-ownership-title">Sumber terbuka, hak data tetap dihormati.</h2>
   </div>
   <div class="notice-content">
     <p>Seluruh data kamus dimiliki oleh <strong>Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia</strong>.</p>
     <p>Penggunaan komersial dilarang dan tunduk pada Undang-Undang Republik Indonesia Nomor 28 Tahun 2014 tentang Hak Cipta.</p>
-    <small>Ikon kamus pada dokumentasi disediakan oleh <a href="https://www.flaticon.com/free-icon/dictionary_7214200?related_id=7214200" target="_blank" rel="noreferrer">Flaticon ↗</a></small>
   </div>
 </section>
