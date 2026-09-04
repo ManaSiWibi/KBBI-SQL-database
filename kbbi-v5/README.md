@@ -6,15 +6,17 @@ dataset ini dipertahankan terpisah dari snapshot KBBI Edisi VI.
 
 ## Berkas
 
-- [`kbbi_v5__JSON.json`](kbbi_v5__JSON.json) — `146.280` objek.
+- [`kbbi_v5__JSON.json`](kbbi_v5__JSON.json) — `146.265` objek kanonis.
 
 Root key `kbbi_v5` berisi objek dengan field sumber:
 `key`, `nama`, `nomor`, `kata_dasar`, `pelafalan`, `bentuk_tidak_baku`,
-`varian`, `kelas`, `submakna`, `info`, `contoh`, `etimologi`, `kata_turunan`,
-`gabungan_kata`, `peribahasa`, dan `idiom`.
+`varian`, `kelas`, `submakna`, `info`, `contoh`, `etimologi`,
+`etimologi_parsed`, `kata_turunan`, `gabungan_kata`, `peribahasa`, dan `idiom`.
 
 Sel kosong dikonversi menjadi `null`; `nomor` dipertahankan sebagai bilangan
-bulat jika tersedia. Isi teks tidak ditulis ulang.
+bulat jika tersedia. Isi teks tidak ditulis ulang. Lima belas baris yang sama
+persis dihapus setelah deduplikasi; semua `etimologi` mentah tetap dipertahankan
+dan `etimologi_parsed` berisi objek terurai untuk `7.316` baris kanonis.
 
 ## Sumber dan reproduksibilitas
 

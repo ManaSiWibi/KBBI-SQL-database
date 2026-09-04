@@ -21,3 +21,10 @@ Root key `dictionary` berisi array objek dengan rincian field sebagai berikut:
 | `type`             | INTEGER        | -           | YES      | Kategori format data (1: HTML markup, 2: Plain Text) |
 
 ---
+
+## Sumber dan provenance
+
+Snapshot ini berasal dari [bachors/KBBI.sql](https://github.com/bachors/KBBI.sql).
+Commit sumber tidak dipertahankan pada snapshot awal, sehingga data harus
+dianggap sebagai salinan Edisi IV yang tidak revision-pinned. Kepemilikan data
+tetap mengikuti Badan Pengembangan dan Pembinaan Bahasa.

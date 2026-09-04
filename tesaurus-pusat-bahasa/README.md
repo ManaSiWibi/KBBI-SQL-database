@@ -17,7 +17,7 @@ Root key `tesaurus_pusat_bahasa` berisi objek:
 | `sinonim` | Array sinonim |
 | `antonim` | Array antonim |
 
-Data sumber memuat sekitar `130.132` relasi sinonim berarah dan `1.947`
+Data sumber memuat sekitar `130.526` relasi sinonim berarah dan `1.953`
 relasi antonim berarah. Nilai asli dipertahankan; relasi tidak diasumsikan
 simetris dan tidak dicampur dengan data kurasi lain.
 
@@ -35,4 +35,3 @@ simetris dan tidak dicampur dengan data kurasi lain.
 Repositori sumber tidak menyertakan file lisensi data. Koleksi ini digunakan
 untuk referensi nonkomersial dengan atribusi sumber; status redistribusi tetap
 harus diperlakukan sebagai hak yang belum diklarifikasi.
-

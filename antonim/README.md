@@ -1,6 +1,6 @@
 # Antonim
 
-Data ini berisi informasi tentang lawan kata (antonim) dalam Bahasa Indonesia. Saat ini tersedia kurang lebih `550` data antonim.
+Data ini berisi informasi tentang lawan kata (antonim) dalam Bahasa Indonesia. Saat ini tersedia `549` data antonim.
 
 ## Format Data
 
@@ -27,3 +27,12 @@ Data ini berisi informasi tentang lawan kata (antonim) dalam Bahasa Indonesia. S
 | --- | ------ | ------ | --------------------- | --------------------------------------------------------------------------------- |
 | 1   | baik   | buruk  | gradabel/kontekstual  | Pasangan 'baik' dan 'buruk' memiliki hubungan pertentangan makna dalam konteks... |
 | 2   | besar  | kecil  | gradabel/kontekstual  | Pasangan 'besar' dan 'kecil' memiliki hubungan pertentangan makna dalam konteks...|
+
+## Sumber dan provenance
+
+Dataset ini dibuat menggunakan model kecerdasan buatan GPT-5.6 Sol, sebagaimana
+dicatat di [README repositori](../README.md) dan disimpan di
+[`ManaSiWibi/KBBI-SQL-database`](https://github.com/ManaSiWibi/KBBI-SQL-database).
+Prompt asli, tanggal pembuatan,
+dan catatan review manusia tidak tersimpan; perlakukan data ini sebagai data
+generatif nonotoritatif dan verifikasi terhadap sumber kamus sebelum digunakan.

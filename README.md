@@ -24,11 +24,11 @@ datanya.
 Repositori ini menyimpan total data bahasa Indonesia dengan rincian sebagai berikut:
 
 - **Kamus Utama (Edisi IV):** `115.978` kata
-- **KBBI Edisi V (snapshot):** `146.280` objek terstruktur
+- **KBBI Edisi V (snapshot):** `146.265` objek terstruktur kanonis (`15` duplikat eksak dihapus)
 - **KBBI Edisi VI (snapshot):** `194.692` entri terstruktur
 - **Kata Baku & Nonbaku:** `2.847` pasangan kata
 - **Sinonim (Padanan Kata):** `4.625` entri data
-- **Antonim (Lawan Kata):** `550` entri data
+- **Antonim (Lawan Kata):** `549` entri data
 - **Kamus Alay:** `4.459` pemetaan slang ke bentuk normal
 - **IndoLeX:** `131.534` bentuk kata dan `26.956` akar kata berfrekuensi
 - **Enrichment KBBI Edisi IV dari IndoLeX:** `38.364` kata yang dapat dijoin
@@ -36,7 +36,7 @@ Repositori ini menyimpan total data bahasa Indonesia dengan rincian sebagai beri
 - **Kaikki Bahasa Indonesia Peranakan:** `1.667` objek/kata
 - **Tesaurus Pusat Bahasa:** `20.139` entri
 - **Antonim Tesaurus:** `30.171` pasangan berarah unik
-- **WordNet Bahasa Indonesia:** `13.933` keanggotaan synset dan `13.099` definisi
+- **WordNet Bahasa Indonesia:** `13.933` keanggotaan synset, `13.099` definisi, dan `13.933` baris enrichment join-ready
 - **MALINDO Morph:** `255.941` baris analisis morfologi Melayu/Indonesia
 - **Leipzig Indonesian 2013 (100K):** `133.046` tipe kata, `100.000` kalimat,
   `71.456` relasi tetangga, dan `378.892` relasi satu kalimat
@@ -111,6 +111,26 @@ reduplikasi, stem, dan lema.
 Snapshot korpus penggunaan bahasa Indonesia dengan kalimat, indeks kata-ke-
 kalimat, cooccurrence tetangga, dan cooccurrence dalam kalimat untuk
 enrichment berbasis konteks.
+
+### Manifest dan Validasi
+
+- [`dataset_manifest__JSON.json`](dataset_manifest__JSON.json) — inventaris
+  kanonis, jumlah baris, hash SHA-256, sumber, provenance, dan status lisensi
+  setiap dataset.
+- [`scripts/validate_data.py`](scripts/validate_data.py) — memeriksa envelope
+  JSON, README/sumber, hash manifest, join WordNet, dan referensi Leipzig.
+- [`scripts/build_manifest.py`](scripts/build_manifest.py) — membangun ulang
+  manifest setelah data berubah.
+- [`scripts/build_leipzig_similarity.py`](scripts/build_leipzig_similarity.py)
+  — menghitung kemiripan konteks Leipzig secara reproducible untuk satu kata.
+
+Jalankan validasi dari root repositori dengan `python3 scripts/validate_data.py`.
+Manifest dapat dibangun ulang dengan `python3 scripts/build_manifest.py`.
+
+Snapshot data besar dipertahankan sebagai JSON kanonis agar mudah dipakai
+lintas bahasa. Penambahan baru yang melebihi batas rekomendasi GitHub 50 MB
+sebaiknya didistribusikan sebagai release asset atau Git LFS; riwayat lama tidak
+ditulis ulang dalam perubahan ini.
 
 ---
 

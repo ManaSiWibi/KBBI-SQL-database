@@ -24,3 +24,12 @@ Data ini berisi informasi tentang padanan kata (sinonim) dalam Bahasa Indonesia.
 | --- | ------ | ------ | ------------------- | ------------------------------------------------------------------------------------- |
 | 1   | aba    | ayah   | sinonim_satu_synset | 'aba' dan 'ayah' tervalidasi sebagai sinonim pada sekurang-kurangnya satu makna...    |
 | 2   | abadi  | kekal  | sinonim_satu_synset | 'abadi' dan 'kekal' tervalidasi sebagai sinonim pada sekurang-kurangnya satu makna... |
+
+## Sumber dan provenance
+
+Dataset ini dibuat menggunakan model kecerdasan buatan GPT-5.6 Sol, sebagaimana
+dicatat di [README repositori](../README.md) dan disimpan di
+[`ManaSiWibi/KBBI-SQL-database`](https://github.com/ManaSiWibi/KBBI-SQL-database).
+Prompt asli, tanggal pembuatan,
+dan catatan review manusia tidak tersimpan; perlakukan data ini sebagai data
+generatif nonotoritatif dan verifikasi terhadap sumber kamus sebelum digunakan.

@@ -10,3 +10,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# macOS and local development
+.DS_Store
+*.swp
+*.tmp
+.venv/
+__pycache__/

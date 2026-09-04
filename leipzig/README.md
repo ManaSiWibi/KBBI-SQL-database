@@ -40,6 +40,21 @@ kata dalam satu kalimat.
   sedangkan FAQ portal menjelaskan Dice coefficient; parameter dan ambang
   portal perlu dicocokkan sebelum mengklaim hasil identik.
 
+Reproduksi lokal tersedia melalui
+[`scripts/build_leipzig_similarity.py`](../scripts/build_leipzig_similarity.py).
+Perintah ini memakai profil biner yang disimetriskan dari edge `co_n` dan
+`co_s`, cosine similarity, `min_shared=2`, dan `top_k=20` secara default.
+Profil menyimpan tipe relasi sebagai fitur terpisah. Hasilnya adalah derivasi
+lokal yang reproducible, bukan salinan atau klaim identitas terhadap tabel
+portal `sim_w_co`.
+
+Contoh:
+
+```sh
+python3 scripts/build_leipzig_similarity.py \
+  --word bahasa --top-k 20 --output /tmp/bahasa-similarity.json
+```
+
 Indeks posisi kata sumber sengaja tidak disalin karena fitur yang ditargetkan
 hanya memerlukan keanggotaan kalimat. `sources`, `inv_so`, dan SQL import juga
 tidak disalin karena tidak diperlukan untuk tiga fitur tersebut.
