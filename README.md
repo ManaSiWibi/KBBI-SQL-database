@@ -90,6 +90,14 @@ Penerapan basis data ini dapat dilihat langsung pada aplikasi Android berikut:
 
 ## Sumber Data
 
+Repositori ini merupakan fork yang dikelola melalui
+[ManaSiWibi/KBBI-SQL-database](https://github.com/ManaSiWibi/KBBI-SQL-database)
+dari [dyazincahya/KBBI-SQL-database](https://github.com/dyazincahya/KBBI-SQL-database),
+proyek yang dibuat dan dikembangkan oleh
+[Kang Cahya](https://github.com/dyazincahya). Struktur awal dan sebagian data
+repositori berasal dari proyek tersebut; perubahan dan dataset tambahan
+dicantumkan pada daftar sumber di bawah.
+
 Repositori ini merupakan kurasi dari berbagai sumber data bahasa Indonesia yang tersedia di internet, khususnya GitHub. Namun sebagian data ada yang dibuat menggunakan AI (Artificial Intelligence).
 
 1. **[Ican Bachors (KBBI.sql)](https://github.com/bachors/KBBI.sql)** — Penyedia data repositori dasar.
@@ -123,9 +131,3 @@ dan atribusi sumber sebelum mendistribusikan ulang.
 Snapshot KBBI Edisi VI juga tidak memiliki lisensi data terbuka dari sumbernya.
 README sumber menyatakan kepemilikan data berada pada Badan Pengembangan dan
 Pembinaan Bahasa; penggunaan kembali harus memperoleh izin yang sesuai.
-
----
-
-<p align="center">
-  Dikelola oleh <strong><a href="https://kang-cahya.com">Kang Cahya</a></strong>
-</p>
