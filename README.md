@@ -24,6 +24,7 @@ datanya.
 Repositori ini menyimpan total data bahasa Indonesia dengan rincian sebagai berikut:
 
 - **Kamus Utama (Edisi IV):** `115.978` kata
+- **KBBI Edisi V (snapshot):** `146.280` objek terstruktur
 - **KBBI Edisi VI (snapshot):** `194.692` entri terstruktur
 - **Kata Baku & Nonbaku:** `2.847` pasangan kata
 - **Sinonim (Padanan Kata):** `4.625` entri data
@@ -31,6 +32,14 @@ Repositori ini menyimpan total data bahasa Indonesia dengan rincian sebagai beri
 - **Kamus Alay:** `4.459` pemetaan slang ke bentuk normal
 - **IndoLeX:** `131.534` bentuk kata dan `26.956` akar kata berfrekuensi
 - **Enrichment KBBI Edisi IV dari IndoLeX:** `38.364` kata yang dapat dijoin
+- **Kaikki Bahasa Indonesia:** `47.945` objek dari `47.403` kata
+- **Kaikki Bahasa Indonesia Peranakan:** `1.667` objek/kata
+- **Tesaurus Pusat Bahasa:** `20.139` entri
+- **Antonim Tesaurus:** `30.171` pasangan berarah unik
+- **WordNet Bahasa Indonesia:** `13.933` keanggotaan synset dan `13.099` definisi
+- **MALINDO Morph:** `255.941` baris analisis morfologi Melayu/Indonesia
+- **Leipzig Indonesian 2013 (100K):** `133.046` tipe kata, `100.000` kalimat,
+  `71.456` relasi tetangga, dan `378.892` relasi satu kalimat
 
 ---
 
@@ -69,6 +78,39 @@ enrichment yang dapat digabungkan dengan kamus utama.
 Snapshot JSON terstruktur KBBI Edisi VI dengan definisi, contoh, kata turunan,
 gabungan kata, peribahasa, pelafalan, dan etimologi. Data disimpan terpisah
 dari KBBI Edisi IV karena struktur dan status lisensinya berbeda.
+
+### [8. KBBI Edisi V](kbbi-v5/README.md)
+
+Snapshot KBBI V dari dataset Lyon28, disimpan terpisah karena formatnya
+diratakan per baris makna dan memiliki catatan hak penggunaan tersendiri.
+
+### [9. Kaikki / Wiktionary](kaikki/README.md)
+
+Data machine-readable Wiktionary Bahasa Indonesia dan Bahasa Indonesia
+Peranakan dengan sense, bentuk kata, kategori, dan contoh.
+
+### [10. Tesaurus Pusat Bahasa](tesaurus-pusat-bahasa/README.md)
+
+Snapshot tesaurus dengan relasi sinonim dan antonim dari sumber Pusat Bahasa.
+
+### [11. Antonim Tesaurus](antonim-tesaurus/README.md)
+
+Pasangan antonim hasil pemrosesan teks tesaurus; dipisahkan dari antonim kurasi.
+
+### [12. WordNet Bahasa](wordnet-bahasa/README.md)
+
+Keanggotaan lemma-synset dan definisi WordNet Bahasa untuk Bahasa Indonesia.
+
+### [13. MALINDO Morph](malindo-morph/README.md)
+
+Kamus morfologi bahasa Melayu/Indonesia dengan akar, bentuk jadian, imbuhan,
+reduplikasi, stem, dan lema.
+
+### [14. Leipzig Corpora Collection](leipzig/README.md)
+
+Snapshot korpus penggunaan bahasa Indonesia dengan kalimat, indeks kata-ke-
+kalimat, cooccurrence tetangga, dan cooccurrence dalam kalimat untuk
+enrichment berbasis konteks.
 
 ---
 
@@ -112,6 +154,19 @@ Repositori ini merupakan kurasi dari berbagai sumber data bahasa Indonesia yang 
 10. **[Kamus Alay](https://github.com/nasalsabila/kamus-alay)** — Salsabila, Ali, Yosef, dan Ade; didistribusikan ulang tanpa konteks komentar.
 11. **[IndoLeX](https://www.kaggle.com/datasets/binhashem/indolex-indonesian-academic-lexical-dataset)** — Omar Hashem; data frekuensi dan akar kata dari dataset Kaggle versi 2.
 12. **[Definisi/kbbi](https://github.com/Definisi/kbbi)** — snapshot KBBI Edisi VI yang diekstrak dari APK resmi versi 6.0.2.
+13. **[Kaikki Bahasa Indonesia](https://kaikki.org/idwiktionary/Bahasa%20Indonesia/index.html)** — ekstraksi Wiktionary melalui Wiktextract.
+14. **[Kaikki Bahasa Indonesia Peranakan](https://kaikki.org/idwiktionary/Bahasa%20Indonesia%20Peranakan/index.html)** — ekstraksi Wiktionary melalui Wiktextract.
+15. **[Lyon28/kamus-besar-bahasa-indonesia](https://huggingface.co/datasets/Lyon28/kamus-besar-bahasa-indonesia)** — snapshot KBBI V dalam CSV.
+16. **[victoriasovereigne/tesaurus](https://github.com/victoriasovereigne/tesaurus)** — dump Tesaurus Bahasa Indonesia/Pusat Bahasa 2008.
+17. **[riochr17/Daftar-Antonim-Tesaurus-Bahasa-Indonesia](https://github.com/riochr17/Daftar-Antonim-Tesaurus-Bahasa-Indonesia)** — hasil pemrosesan pasangan antonim dari tesaurus.
+18. **[WordNet Bahasa](https://wn-msa.sourceforge.net/eng/index.html)** — data lemma-synset Bahasa Indonesia, lisensi MIT.
+19. **[MALINDO Morph](https://github.com/matbahasa/MALINDO_Morph)** — kamus morfologi Melayu/Indonesia, lisensi CC BY 4.0 menurut README sumber.
+20. **[Leipzig Corpora Collection](https://corpora.uni-leipzig.de/en?corpusId=ind_mixed_2013)** — snapshot `ind_mixed_2013_100K` dari [arsip unduhan resmi](https://downloads.wortschatz-leipzig.de/corpora/ind_mixed_2013_100K.tar.gz), format dan relasi mengikuti [spesifikasi Leipzig](https://wortschatz.informatik.uni-leipzig.de/documents/Format_Download_File-eng.pdf).
+
+Sumber yang diperiksa tetapi tidak disalin sebagai dataset statis:
+
+- **[ivanlanin/kateglo2](https://github.com/ivanlanin/kateglo2)** — repositori aplikasi; data operasional berada di direktori `.data/` yang diabaikan dan tidak menyediakan dump dataset terversi.
+- **[satriaajiputra/synonym-antonym-indonesia](https://github.com/satriaajiputra/synonym-antonym-indonesia)** — paket PHP yang mengambil data dari `sinonimkata.com` saat runtime, bukan snapshot data.
 
 ---
 
@@ -119,15 +174,26 @@ Repositori ini merupakan kurasi dari berbagai sumber data bahasa Indonesia yang 
 >
 > ### Hak Cipta dan Kepemilikan Data (Copyright and Data Ownership)
 >
-> Seluruh data di dalam kamus ini dimiliki sepenuhnya oleh **Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan Dasar dan Menengah Republik Indonesia**.
+> Koleksi yang berasal dari KBBI atau Tesaurus Pusat Bahasa mengikuti catatan kepemilikan **Badan Pengembangan dan Pembinaan Bahasa, Republik Indonesia**. Dataset lain memiliki ketentuan sumber masing-masing; lihat README setiap direktori.
 >
-> Penggunaan dataset ini untuk kebutuhan komersial sangat dilarang dan tunduk pada ketentuan hukum pidana berdasarkan **Undang-Undang Republik Indonesia Nomor 28 Tahun 2014 tentang Hak Cipta**.
+> Penggunaan koleksi KBBI dan Tesaurus Pusat Bahasa untuk kebutuhan komersial sangat dilarang dan tunduk pada ketentuan hukum pidana berdasarkan **Undang-Undang Republik Indonesia Nomor 28 Tahun 2014 tentang Hak Cipta**.
 
 Kamus Alay mencantumkan lisensi sumber sebagai tidak diketahui. IndoLeX
 mencantumkan lisensi **CC BY-NC-SA 4.0**. Kolom definisi KBBI dari IndoLeX tidak
 disertakan dalam salinan ini; gunakan [ketentuan lisensi IndoLeX](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 dan atribusi sumber sebelum mendistribusikan ulang.
 
-Snapshot KBBI Edisi VI juga tidak memiliki lisensi data terbuka dari sumbernya.
+Snapshot KBBI Edisi VI dan snapshot KBBI V juga tidak memiliki lisensi data
+terbuka yang konsisten dari sumbernya.
 README sumber menyatakan kepemilikan data berada pada Badan Pengembangan dan
 Pembinaan Bahasa; penggunaan kembali harus memperoleh izin yang sesuai.
+
+MALINDO Morph menyatakan lisensi **CC BY 4.0**; gunakan atribusi sumber dan
+lihat [README dataset](malindo-morph/README.md) untuk provenance serta cakupan
+bahasa Melayu/Indonesia.
+
+Snapshot Leipzig berasal dari korpus unduhan yang dinyatakan tersedia dengan
+atribusi **CC BY**; kalimatnya diproses otomatis dari materi Internet. Lihat
+[FAQ Leipzig](https://www.wortschatz.uni-leipzig.de/en/documentation/faq),
+[ketentuan penggunaan](https://wortschatz-leipzig.de/en/usage), dan
+[README dataset](leipzig/README.md) untuk batasan provenance dan redistribusi.
