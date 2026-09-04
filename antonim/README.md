@@ -4,21 +4,9 @@ Data ini berisi informasi tentang lawan kata (antonim) dalam Bahasa Indonesia. S
 
 ## Format Data
 
-Tersedia dalam berbagai format data:
+- [JSON](dictionary_antonim__JSON.json) — format kanonis repositori.
 
-- [MySQL](dictionary_antonim__MySQL.sql)
-- [SQLite](dictionary_antonim__SQLite.sql)
-- [PostgreSQL](dictionary_antonim__PostgreSQL.sql)
-- [CSV](dictionary_antonim__CSV.csv)
-- [JSON](dictionary_antonim__JSON.json)
-- [Markdown](dictionary_antonim__MARKDOWN.md)
-- [PHP Array](dictionary_antonim__PHP_ARRAY.php)
-- [XML](dictionary_antonim__XML.xml)
-- [DbUnit](dictionary_antonim__DbUnit.xml)
-- [HTML](dictionary_antonim__HTML.html)
-- [TEXT](dictionary_antonim__TEXT.txt)
-
-## Struktur Tabel
+## Struktur JSON
 
 | Nama Field        | Tipe Data | Nullable | Keterangan                                       |
 | ----------------- | --------- | -------- | ------------------------------------------------ |

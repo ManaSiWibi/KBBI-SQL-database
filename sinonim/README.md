@@ -4,21 +4,9 @@ Data ini berisi informasi tentang padanan kata (sinonim) dalam Bahasa Indonesia.
 
 ## Format Data
 
-Tersedia dalam berbagai format data:
+- [JSON](dictionary_sinonim__JSON.json) — format kanonis repositori.
 
-- [MySQL](dictionary_sinonim__MySQL.sql)
-- [SQLite](dictionary_sinonim__SQLite.sql)
-- [PostgreSQL](dictionary_sinonim__PostgreSQL.sql)
-- [CSV](dictionary_sinonim__CSV.csv)
-- [JSON](dictionary_sinonim__JSON.json)
-- [Markdown](dictionary_sinonim__MARKDOWN.md)
-- [PHP Array](dictionary_sinonim__PHP_ARRAY.php)
-- [XML](dictionary_sinonim__XML.xml)
-- [DbUnit](dictionary_sinonim__DbUnit.xml)
-- [HTML](dictionary_sinonim__HTML.html)
-- [TEXT](dictionary_sinonim__TEXT.txt)
-
-## Struktur Tabel
+## Struktur JSON
 
 | Nama Field   | Tipe Data | Nullable | Keterangan                                                          |
 | ------------ | --------- | -------- | ------------------------------------------------------------------- |
