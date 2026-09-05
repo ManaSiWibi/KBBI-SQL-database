@@ -136,10 +136,42 @@ def assert_wordnet() -> None:
             fail("WordNet: has_definition disagrees with definitions")
 
 
-def assert_leipzig() -> None:
-    _, words = envelope(ROOT / "leipzig/leipzig_words__JSON.json")
-    _, sentences = envelope(ROOT / "leipzig/leipzig_sentences__JSON.json")
-    _, index = envelope(ROOT / "leipzig/leipzig_word_sentence_index__JSON.json")
+def assert_etymology_db() -> None:
+    _, rows = envelope(ROOT / "etymology-db/etymology_db_indonesian__JSON.json")
+    _, metadata = envelope(ROOT / "etymology-db/etymology_metadata__JSON.json")
+    required = {
+        "term_id",
+        "lang",
+        "term",
+        "reltype",
+        "related_term_id",
+        "related_lang",
+        "related_term",
+        "position",
+        "group_tag",
+        "parent_tag",
+        "parent_position",
+    }
+    if not isinstance(rows, list) or not isinstance(metadata, dict):
+        fail("etymology-db: relations must be an array and metadata an object")
+    for row in rows:
+        if not isinstance(row, dict) or set(row) != required:
+            fail("etymology-db: invalid source-schema row")
+        if not isinstance(row["lang"], str) or row["lang"].casefold() != "indonesian":
+            fail("etymology-db: non-Indonesian row retained")
+        for field in ("position", "parent_position"):
+            if row[field] is not None and type(row[field]) is not int:
+                fail(f"etymology-db: {field} must be an integer or null")
+    scope = metadata.get("scope")
+    if not isinstance(scope, dict) or scope.get("indonesian_rows") != len(rows):
+        fail("etymology-db: metadata row count mismatch")
+
+
+def assert_leipzig(directory: str) -> None:
+    base = ROOT / directory
+    _, words = envelope(base / "leipzig_words__JSON.json")
+    _, sentences = envelope(base / "leipzig_sentences__JSON.json")
+    _, index = envelope(base / "leipzig_word_sentence_index__JSON.json")
     if not all(isinstance(value, list) for value in (words, sentences, index)):
         fail("Leipzig: words, sentences, and index must be arrays")
     word_ids = {row.get("id") for row in words}
@@ -154,10 +186,10 @@ def assert_leipzig() -> None:
         if not set(row["sentence_ids"]) <= sentence_ids:
             fail(f"Leipzig: index references unknown sentence for word {row.get('word_id')}")
     for filename in (
-        "leipzig/leipzig_neighbour_cooccurrences__JSON.json",
-        "leipzig/leipzig_sentence_cooccurrences__JSON.json",
+        "leipzig_neighbour_cooccurrences__JSON.json",
+        "leipzig_sentence_cooccurrences__JSON.json",
     ):
-        _, relations = envelope(ROOT / filename)
+        _, relations = envelope(base / filename)
         if not isinstance(relations, list):
             fail(f"{filename}: value must be an array")
         for row in relations:
@@ -178,7 +210,10 @@ def main() -> None:
         assert_manifest(files)
         assert_kbbi_v5()
         assert_wordnet()
-        assert_leipzig()
+        assert_etymology_db()
+        assert_leipzig("leipzig")
+        assert_leipzig("leipzig-wikipedia-2021")
+        assert_leipzig("leipzig-wikipedia-2026")
     except ValidationError as error:
         print(f"ERROR: {error}")
         raise SystemExit(1)

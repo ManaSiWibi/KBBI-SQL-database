@@ -114,6 +114,38 @@ DATASET_CATALOG = {
         "provenance_status": "archive hash and normalized subset documented",
         "notes": "The similarity feature is a reproducible local derivation, not a copied portal result.",
     },
+    "leipzig-wikipedia-2021": {
+        "source_urls": [
+            "https://dict.wortschatz-leipzig.de/en?corpusId=ind_wikipedia_2021",
+            "https://downloads.wortschatz-leipzig.de/corpora/ind_wikipedia_2021_100K.tar.gz",
+            "https://wortschatz.informatik.uni-leipzig.de/documents/Format_Download_File-eng.pdf",
+        ],
+        "license_status": "CC BY stated by Leipzig documentation; source terms still apply",
+        "provenance_status": "archive hash and normalized subset documented",
+        "notes": "2021 Wikipedia-only corpus; kept separate from the mixed 2013 corpus because genre changes the distribution.",
+    },
+    "leipzig-wikipedia-2026": {
+        "source_urls": [
+            "https://dumps.wikimedia.org/idwiki/20260901/",
+            "https://dumps.wikimedia.org/idwiki/20260901/idwiki-20260901-pages-articles.xml.bz2",
+            "https://dumps.wikimedia.org/idwiki/20260901/idwiki-20260901-pages-articles1.xml-p1p1500000.bz2",
+            "https://meta.wikimedia.org/wiki/Terms_of_use/en",
+        ],
+        "license_status": "Wikimedia/Wikipedia CC BY-SA/GFDL and third-party terms apply",
+        "provenance_status": "dump revision, part, prefix hash, and deterministic transformation documented",
+        "notes": "100K-sentence derived prefix sample; Leipzig-compatible schema, not an official Leipzig corpus; rare relations are frequency-filtered.",
+    },
+    "etymology-db": {
+        "source_urls": [
+            "https://github.com/droher/etymology-db",
+            "https://github.com/droher/etymology-db/releases/tag/2023-12",
+            "https://github.com/droher/etymology-db/releases/download/2023-12/etymology.csv.gz",
+            "https://github.com/droher/etymology-db/blob/master/README.md",
+        ],
+        "license_status": "CC ShareAlike 3.0 according to the source README; underlying Wiktionary terms apply",
+        "provenance_status": "release tag, source commit, asset hash, and Indonesian-language row filter documented",
+        "notes": "Indonesian-only slice; group_* rows preserve nested source structure; source parser reports no systematic validation.",
+    },
 }
 
 

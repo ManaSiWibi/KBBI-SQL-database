@@ -40,6 +40,11 @@ Repositori ini menyimpan total data bahasa Indonesia dengan rincian sebagai beri
 - **MALINDO Morph:** `255.941` baris analisis morfologi Melayu/Indonesia
 - **Leipzig Indonesian 2013 (100K):** `133.046` tipe kata, `100.000` kalimat,
   `71.456` relasi tetangga, dan `378.892` relasi satu kalimat
+- **Leipzig Indonesian Wikipedia 2021 (100K):** `151.524` tipe kata,
+  `100.000` kalimat, `64.537` relasi tetangga, dan `322.026` relasi satu kalimat
+- **Indonesian Wikipedia 2026 (derived 100K):** `106.005` tipe token,
+  `100.000` kalimat, `105.563` relasi tetangga, dan `402.198` relasi satu kalimat
+- **etymology-db Bahasa Indonesia:** `39.605` baris relasi dari `10.284` istilah
 
 ---
 
@@ -112,6 +117,23 @@ Snapshot korpus penggunaan bahasa Indonesia dengan kalimat, indeks kata-ke-
 kalimat, cooccurrence tetangga, dan cooccurrence dalam kalimat untuk
 enrichment berbasis konteks.
 
+### [15. Leipzig Indonesian Wikipedia 2021](leipzig-wikipedia-2021/README.md)
+
+Snapshot yang lebih baru dari materi Wikipedia 2021. Dataset ini dipisahkan
+dari corpus campuran 2013 karena genre sumber memengaruhi frekuensi dan
+cooccurrence.
+
+### [16. Indonesian Wikipedia 2026 (derived)](leipzig-wikipedia-2026/README.md)
+
+Sampel deterministik 100K kalimat dari prefix dump Wikipedia Indonesia resmi
+bertanggal 2026-09-01. Ini bukan korpus Leipzig resmi, tetapi memakai enam
+berkas JSON yang sama agar fitur konteks dapat dipakai lintas corpus.
+
+### [17. etymology-db Bahasa Indonesia](etymology-db/README.md)
+
+Slice berbahasa Indonesia dari release `2023-12` etymology-db, dengan relasi
+etimologi dan struktur grup dari data Wiktionary.
+
 ### Manifest dan Validasi
 
 - [`dataset_manifest__JSON.json`](dataset_manifest__JSON.json) — inventaris
@@ -123,6 +145,10 @@ enrichment berbasis konteks.
   manifest setelah data berubah.
 - [`scripts/build_leipzig_similarity.py`](scripts/build_leipzig_similarity.py)
   — menghitung kemiripan konteks Leipzig secara reproducible untuk satu kata.
+- [`scripts/build_wikipedia_derived.py`](scripts/build_wikipedia_derived.py)
+  — membangun snapshot Wikipedia turunan dari prefix dump bzip2.
+- [`scripts/import_etymology_db.py`](scripts/import_etymology_db.py)
+  — mengimpor slice `lang=Indonesian` dari release etymology-db.
 
 Jalankan validasi dari root repositori dengan `python3 scripts/validate_data.py`.
 Manifest dapat dibangun ulang dengan `python3 scripts/build_manifest.py`.
@@ -182,6 +208,9 @@ Repositori ini merupakan kurasi dari berbagai sumber data bahasa Indonesia yang 
 18. **[WordNet Bahasa](https://wn-msa.sourceforge.net/eng/index.html)** — data lemma-synset Bahasa Indonesia, lisensi MIT.
 19. **[MALINDO Morph](https://github.com/matbahasa/MALINDO_Morph)** — kamus morfologi Melayu/Indonesia, lisensi CC BY 4.0 menurut README sumber.
 20. **[Leipzig Corpora Collection](https://corpora.uni-leipzig.de/en?corpusId=ind_mixed_2013)** — snapshot `ind_mixed_2013_100K` dari [arsip unduhan resmi](https://downloads.wortschatz-leipzig.de/corpora/ind_mixed_2013_100K.tar.gz), format dan relasi mengikuti [spesifikasi Leipzig](https://wortschatz.informatik.uni-leipzig.de/documents/Format_Download_File-eng.pdf).
+21. **[Leipzig Indonesian Wikipedia 2021](https://dict.wortschatz-leipzig.de/en?corpusId=ind_wikipedia_2021)** — snapshot `ind_wikipedia_2021_100K` dari [arsip unduhan resmi](https://downloads.wortschatz-leipzig.de/corpora/ind_wikipedia_2021_100K.tar.gz), sumber Wikipedia dan materi tahun 2021.
+22. **[Wikimedia Indonesian Wikipedia dump 2026](https://dumps.wikimedia.org/idwiki/20260901/)** — sampel turunan dari [berkas dump penuh](https://dumps.wikimedia.org/idwiki/20260901/idwiki-20260901-pages-articles.xml.bz2) dan [bagian multistream yang dipakai](https://dumps.wikimedia.org/idwiki/20260901/idwiki-20260901-pages-articles1.xml-p1p1500000.bz2); tanggal dump, rentang byte, hash, dan transformasi dicatat di [`leipzig-wikipedia-2026/README.md`](leipzig-wikipedia-2026/README.md).
+23. **[droher/etymology-db](https://github.com/droher/etymology-db)** — slice Bahasa Indonesia dari [release 2023-12](https://github.com/droher/etymology-db/releases/tag/2023-12), diambil dari [aset CSV terkompresi](https://github.com/droher/etymology-db/releases/download/2023-12/etymology.csv.gz); filter bahasa, commit, hash aset, dan transformasi dicatat di [`etymology-db/README.md`](etymology-db/README.md).
 
 Sumber yang diperiksa tetapi tidak disalin sebagai dataset statis:
 
@@ -211,6 +240,17 @@ Pembinaan Bahasa; penggunaan kembali harus memperoleh izin yang sesuai.
 MALINDO Morph menyatakan lisensi **CC BY 4.0**; gunakan atribusi sumber dan
 lihat [README dataset](malindo-morph/README.md) untuk provenance serta cakupan
 bahasa Melayu/Indonesia.
+
+Dataset Wikipedia 2026 turunan mengikuti ketentuan Wikimedia/Wikipedia,
+termasuk CC BY-SA, GFDL, dan kemungkinan pengecualian pihak ketiga. Lihat
+[Wikimedia Terms of Use](https://meta.wikimedia.org/wiki/Terms_of_use/en) dan
+[README dataset](leipzig-wikipedia-2026/README.md) untuk hash, batas sampel,
+atribusi, dan kewajiban share-alike.
+
+Slice etymology-db mengikuti **CC ShareAlike 3.0** menurut README sumber;
+data dasarnya berasal dari Wiktionary dan tetap membawa kewajiban atribusi serta
+share-alike yang berlaku. Lihat [README dataset](etymology-db/README.md) untuk
+release, hash aset penuh, cakupan filter, dan batasan validasi sumber.
 
 Snapshot Leipzig berasal dari korpus unduhan yang dinyatakan tersedia dengan
 atribusi **CC BY**; kalimatnya diproses otomatis dari materi Internet. Lihat

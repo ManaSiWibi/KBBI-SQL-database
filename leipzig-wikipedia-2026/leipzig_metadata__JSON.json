@@ -1,0 +1,67 @@
+{
+  "leipzig_wikipedia_2026_metadata": {
+    "corpus_id": "idwiki-20260901-prefix-16MiB-100K",
+    "source": "Indonesian Wikipedia (Wikimedia dump)",
+    "genre": "Wikipedia",
+    "year": 2026,
+    "dump_id": "idwiki-20260901",
+    "source_url": "https://dumps.wikimedia.org/idwiki/20260901/idwiki-20260901-pages-articles.xml.bz2",
+    "source_stream_url": "https://dumps.wikimedia.org/idwiki/20260901/idwiki-20260901-pages-articles1.xml-p1p1500000.bz2",
+    "source_sha1": "f76d6700ddcb6aedca033b5a052647a21e6246e0",
+    "source_bytes": 1245213196,
+    "source_part_sha1": "4dfa0f4dda40be12aaa9930846fbcec78d3e2246",
+    "source_part_bytes": 435610924,
+    "prefix": {
+      "bytes": 16777216,
+      "sha256": "2cdaa80292d2e3b167ebdf0cb28d2e4bb2e4ff7354676bd087f0563b92e6c3d0",
+      "sampling": "first accepted sentences from the deterministic compressed byte prefix",
+      "full_dump_included": false
+    },
+    "sample": {
+      "sentences": 100000,
+      "pages_seen": 1613,
+      "article_pages_seen": 1378,
+      "candidate_sentences_seen": 100031,
+      "compressed_prefix_complete": false
+    },
+    "normalization": {
+      "wikitext": "conservative regex cleanup; templates, references, tables, links, HTML, and formatting markup removed",
+      "casefold": true,
+      "tokenizer": "Unicode letters with optional internal apostrophe/hyphen, plus numeric tokens",
+      "sentence_filter": {
+        "minimum_characters": 20,
+        "maximum_characters": 5000
+      }
+    },
+    "cooccurrence": {
+      "neighbour": "directed adjacent token bigrams; identical-token edges omitted",
+      "sentence": "unique unordered token pairs per sentence",
+      "maximum_unique_tokens_per_sentence": 100,
+      "capped_sentences": 140,
+      "minimum_neighbour_frequency": 3,
+      "minimum_sentence_frequency": 6,
+      "association_score": "Dice coefficient multiplied by 100, stored as significance for Leipzig-compatible schema"
+    },
+    "retained": {
+      "words": 106005,
+      "sentences": 100000,
+      "word_sentence_index": 106005,
+      "word_sentence_occurrences": 1773126,
+      "neighbour_events": 1913049,
+      "neighbour_cooccurrences_before_frequency_filter": 848391,
+      "neighbour_cooccurrences": 105563,
+      "sentence_cooccurrences_before_frequency_filter": 8182525,
+      "sentence_cooccurrences": 402198
+    },
+    "license_note": "Wikimedia and Wikipedia licensing terms apply, including CC BY-SA/GFDL and possible third-party exceptions; review the linked Terms of Use before redistribution.",
+    "derived_not_official_leipzig": true,
+    "similar_context": {
+      "source_file_present": false,
+      "derivation": "the repository similarity script consumes the same six-file relation shape; it does not reproduce Leipzig portal sim_w_co",
+      "input_files": [
+        "leipzig_neighbour_cooccurrences__JSON.json",
+        "leipzig_sentence_cooccurrences__JSON.json"
+      ]
+    }
+  }
+}

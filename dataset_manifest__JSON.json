@@ -77,6 +77,34 @@
         "notes": "KBBI Edisi IV source data; preserve ownership notice."
       },
       {
+        "directory": "etymology-db",
+        "files": [
+          {
+            "path": "etymology-db/etymology_db_indonesian__JSON.json",
+            "root_key": "etymology_db_indonesian",
+            "value_type": "array",
+            "record_count": 39605,
+            "sha256": "221fabdb1607d29bc3ca879e013f25c4c0393dae4e6685cb4197728b2422397e"
+          },
+          {
+            "path": "etymology-db/etymology_metadata__JSON.json",
+            "root_key": "etymology_db_metadata",
+            "value_type": "dict",
+            "record_count": null,
+            "sha256": "f194deb5c17fa1c5ecc7f3b21d76c82d311adb4472648f3395306ebb8ab59819"
+          }
+        ],
+        "source_urls": [
+          "https://github.com/droher/etymology-db",
+          "https://github.com/droher/etymology-db/releases/tag/2023-12",
+          "https://github.com/droher/etymology-db/releases/download/2023-12/etymology.csv.gz",
+          "https://github.com/droher/etymology-db/blob/master/README.md"
+        ],
+        "license_status": "CC ShareAlike 3.0 according to the source README; underlying Wiktionary terms apply",
+        "provenance_status": "release tag, source commit, asset hash, and Indonesian-language row filter documented",
+        "notes": "Indonesian-only slice; group_* rows preserve nested source structure; source parser reports no systematic validation."
+      },
+      {
         "directory": "indolex",
         "files": [
           {
@@ -243,6 +271,117 @@
         "license_status": "CC BY stated by Leipzig documentation; source terms still apply",
         "provenance_status": "archive hash and normalized subset documented",
         "notes": "The similarity feature is a reproducible local derivation, not a copied portal result."
+      },
+      {
+        "directory": "leipzig-wikipedia-2021",
+        "files": [
+          {
+            "path": "leipzig-wikipedia-2021/leipzig_metadata__JSON.json",
+            "root_key": "leipzig_ind_wikipedia_2021_100K",
+            "value_type": "dict",
+            "record_count": null,
+            "sha256": "7f79d4bd29648152734bf900615e0f6b1a879ed9274c6abe9a316e0994b9b1b8"
+          },
+          {
+            "path": "leipzig-wikipedia-2021/leipzig_neighbour_cooccurrences__JSON.json",
+            "root_key": "leipzig_neighbour_cooccurrences",
+            "value_type": "array",
+            "record_count": 64537,
+            "sha256": "38266b97da76bcd5e9eacbaaebedca1cc8ea7025fa87bf29d38f5a945e73f1c6"
+          },
+          {
+            "path": "leipzig-wikipedia-2021/leipzig_sentence_cooccurrences__JSON.json",
+            "root_key": "leipzig_sentence_cooccurrences",
+            "value_type": "array",
+            "record_count": 322026,
+            "sha256": "8d11dcd636e52c45ff8f8eb4329088832067c6cc0f4d7dc4da54e65a3a73e249"
+          },
+          {
+            "path": "leipzig-wikipedia-2021/leipzig_sentences__JSON.json",
+            "root_key": "leipzig_sentences",
+            "value_type": "array",
+            "record_count": 100000,
+            "sha256": "4fb092c951e49ab116e4862830cd0aea8bf35cda6e05d8bdbe73155b589001df"
+          },
+          {
+            "path": "leipzig-wikipedia-2021/leipzig_word_sentence_index__JSON.json",
+            "root_key": "leipzig_word_sentence_index",
+            "value_type": "array",
+            "record_count": 151524,
+            "sha256": "2dc01e88fac708b5b8fab0d6260a8a91db3199aa0a5f9b01edbce02551e4d51c"
+          },
+          {
+            "path": "leipzig-wikipedia-2021/leipzig_words__JSON.json",
+            "root_key": "leipzig_words",
+            "value_type": "array",
+            "record_count": 151524,
+            "sha256": "5654626866d6a30873ebebb7833adbb199dcc302013c81893f49bd244b6cd0df"
+          }
+        ],
+        "source_urls": [
+          "https://dict.wortschatz-leipzig.de/en?corpusId=ind_wikipedia_2021",
+          "https://downloads.wortschatz-leipzig.de/corpora/ind_wikipedia_2021_100K.tar.gz",
+          "https://wortschatz.informatik.uni-leipzig.de/documents/Format_Download_File-eng.pdf"
+        ],
+        "license_status": "CC BY stated by Leipzig documentation; source terms still apply",
+        "provenance_status": "archive hash and normalized subset documented",
+        "notes": "2021 Wikipedia-only corpus; kept separate from the mixed 2013 corpus because genre changes the distribution."
+      },
+      {
+        "directory": "leipzig-wikipedia-2026",
+        "files": [
+          {
+            "path": "leipzig-wikipedia-2026/leipzig_metadata__JSON.json",
+            "root_key": "leipzig_wikipedia_2026_metadata",
+            "value_type": "dict",
+            "record_count": null,
+            "sha256": "94ce3baababe1a20fb6538bf27a6077a28571fad9824f2dc9b61f12f63bba24d"
+          },
+          {
+            "path": "leipzig-wikipedia-2026/leipzig_neighbour_cooccurrences__JSON.json",
+            "root_key": "leipzig_neighbour_cooccurrences",
+            "value_type": "array",
+            "record_count": 105563,
+            "sha256": "871e4bcada135b62afc7bff0446ea235b51850c1042a75af618ab43ead5435a1"
+          },
+          {
+            "path": "leipzig-wikipedia-2026/leipzig_sentence_cooccurrences__JSON.json",
+            "root_key": "leipzig_sentence_cooccurrences",
+            "value_type": "array",
+            "record_count": 402198,
+            "sha256": "b57f87645f829f855786367419da5c80e37ac7a955e651c12ab6b7fa8ba2c340"
+          },
+          {
+            "path": "leipzig-wikipedia-2026/leipzig_sentences__JSON.json",
+            "root_key": "leipzig_sentences",
+            "value_type": "array",
+            "record_count": 100000,
+            "sha256": "39f7a0532fa7b2ea761118d98abc6a1f1ed8bd18707b96927f1493bc51b1bdcc"
+          },
+          {
+            "path": "leipzig-wikipedia-2026/leipzig_word_sentence_index__JSON.json",
+            "root_key": "leipzig_word_sentence_index",
+            "value_type": "array",
+            "record_count": 106005,
+            "sha256": "91bf774dd94130f0d2eb6942078e47c0aac062331c6668d152859603629416c3"
+          },
+          {
+            "path": "leipzig-wikipedia-2026/leipzig_words__JSON.json",
+            "root_key": "leipzig_words",
+            "value_type": "array",
+            "record_count": 106005,
+            "sha256": "c198128161abb8a3fce333fa53804a3a07fc64d90186c620734ac4bdcea2dedf"
+          }
+        ],
+        "source_urls": [
+          "https://dumps.wikimedia.org/idwiki/20260901/",
+          "https://dumps.wikimedia.org/idwiki/20260901/idwiki-20260901-pages-articles.xml.bz2",
+          "https://dumps.wikimedia.org/idwiki/20260901/idwiki-20260901-pages-articles1.xml-p1p1500000.bz2",
+          "https://meta.wikimedia.org/wiki/Terms_of_use/en"
+        ],
+        "license_status": "Wikimedia/Wikipedia CC BY-SA/GFDL and third-party terms apply",
+        "provenance_status": "dump revision, part, prefix hash, and deterministic transformation documented",
+        "notes": "100K-sentence derived prefix sample; Leipzig-compatible schema, not an official Leipzig corpus; rare relations are frequency-filtered."
       },
       {
         "directory": "malindo-morph",

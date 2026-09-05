@@ -17,26 +17,25 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LEIPZIG = ROOT / "leipzig"
 
 
-def load(name: str) -> object:
-    path = LEIPZIG / name
+def load(directory: Path, name: str) -> object:
+    path = directory / name
     data = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict) or len(data) != 1:
         raise ValueError(f"{path}: expected one-key JSON envelope")
     return next(iter(data.values()))
 
 
-def build_profiles(min_significance: float) -> tuple[dict[int, dict[str, object]], dict[int, set[tuple[str, int]]], dict[tuple[str, int], set[int]]]:
-    words = {row["id"]: row for row in load("leipzig_words__JSON.json")}
+def build_profiles(directory: Path, min_significance: float) -> tuple[dict[int, dict[str, object]], dict[int, set[tuple[str, int]]], dict[tuple[str, int], set[int]]]:
+    words = {row["id"]: row for row in load(directory, "leipzig_words__JSON.json")}
     profiles: defaultdict[int, set[tuple[str, int]]] = defaultdict(set)
     inverted: defaultdict[tuple[str, int], set[int]] = defaultdict(set)
     for filename, relation_type in (
         ("leipzig_neighbour_cooccurrences__JSON.json", "neighbour"),
         ("leipzig_sentence_cooccurrences__JSON.json", "sentence"),
     ):
-        for row in load(filename):
+        for row in load(directory, filename):
             if row["significance"] < min_significance:
                 continue
             word1, word2 = row["word1_id"], row["word2_id"]
@@ -93,12 +92,16 @@ def main() -> None:
     parser.add_argument("--top-k", type=int, default=20)
     parser.add_argument("--min-shared", type=int, default=2)
     parser.add_argument("--min-significance", type=float, default=0.0)
+    parser.add_argument("--dataset-dir", default="leipzig", help="Leipzig dataset directory (default: leipzig)")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.top_k < 1 or args.min_shared < 1:
         parser.error("--top-k and --min-shared must be positive")
 
-    words, profiles, inverted = build_profiles(args.min_significance)
+    directory = ROOT / args.dataset_dir
+    if not directory.is_dir():
+        parser.error(f"unknown dataset directory: {args.dataset_dir}")
+    words, profiles, inverted = build_profiles(directory, args.min_significance)
     if args.word_id is not None:
         query_id = args.word_id
         if query_id not in words:
@@ -114,6 +117,7 @@ def main() -> None:
     payload = {
         "leipzig_context_similarity": {
             "query": {"word_id": query_id, "word": words[query_id]["word"]},
+            "dataset_dir": args.dataset_dir,
             "algorithm": "binary cosine over symmetric co_n/co_s profiles",
             "parameters": {
                 "top_k": args.top_k,
